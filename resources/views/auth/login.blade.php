@@ -26,7 +26,7 @@
 
         <button>Entrar</button>
         <div class="btn-container">
-            <a class="back-home" href="home">
+            <a class="back-home" href="{{ route('home') }}">
             <i class="fa fa-angle-double-left"></i> Voltar
             </a>
 

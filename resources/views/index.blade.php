@@ -39,8 +39,17 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="pricing.html" class="nav-link">Marcas</a></li>
 	          <li class="nav-item active"><a href="car.html" class="nav-link">Carros</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Registre-se</a></li>
-	          <li class="nav-item"><a href="{{route ('login')}}" class="nav-link">Login</a></li>
+            @auth
+                <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                    @csrf
+                    <button type="submit" style="background:none; border:none; color:red; cursor:pointer;">
+                        Sair
+                    </button>
+                </form>
+            @else 
+	          <li class="nav-item"><a href="{{route ('register')}}">Registre-se</a></li>
+	          <li class="nav-item"><a href="{{route ('login')}}" class="nav-link">Entrar</a></li>
+            @endauth            
 	        </ul>
 	      </div>
 	    </div>
@@ -112,7 +121,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2"><a href="#" class="logo">Kaeme<span>Car</span></a></h2>
-              <p>Este site foi desenvolvido e reutilizado, com adaptações, por Jean Campos, aluno do curso de Sistemas de Informação da Instituição Toledo de Ensino (ITE-BAURU).</p>
+              <p>Este site foi desenvolvido e adaptado, por Jean Campos, aluno do curso de Sistemas de Informação da Instituição Toledo de Ensino.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
