@@ -9946,3 +9946,54 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    /* Container de navegação */
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Estilo base dos botões */
+.btn {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+/* Botão "Entrar" */
+.btn-login {
+    background-color: #007bff;
+}
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+/* Botão "Registrar" */
+.btn-register {
+    background-color: #28a745;
+}
+.btn-register:hover {
+    background-color: #1e7e34;
+}
+
+/* Botão "Sair" */
+.btn-logout {
+    background-color: #dc3545;
+}
+.btn-logout:hover {
+    background-color: #a71d2a;
+}
+
+/* Ajuste opcional para formulários inline (logout) */
+.nav-right form {
+    display: inline;
+}
