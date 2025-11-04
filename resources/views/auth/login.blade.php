@@ -14,15 +14,15 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="{{ route('login-store') }}" method="POST">
+    <form action="{{ route('login-store') }}" method="post">
         @csrf
         <h3>Login</h3>
 
         <label for="username">Nome</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <input type="text" placeholder="Email or Phone" id="username" name="email">
 
         <label for="password">Senha</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" placeholder="Password" id="password" name="password">
 
         <button>Entrar</button>
         <div class="btn-container">

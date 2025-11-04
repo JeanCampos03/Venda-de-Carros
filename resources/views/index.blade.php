@@ -39,17 +39,18 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="pricing.html" class="nav-link">Marcas</a></li>
 	          <li class="nav-item active"><a href="car.html" class="nav-link">Carros</a></li>
-            @auth
-                <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-                    @csrf
-                    <button type="submit" style="background:none; border:none; color:red; cursor:pointer;">
-                        Sair
-                    </button>
-                </form>
-            @else 
-	          <li class="nav-item"><a href="{{route ('register')}}">Registre-se</a></li>
-	          <li class="nav-item"><a href="{{route ('login')}}" class="nav-link">Entrar</a></li>
-            @endauth            
+            <nav class="nav-right">
+    @auth
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-logout">Sair</button>
+        </form>
+    @else
+        <a href="{{ route('register') }}" class="btn btn-register">Registre-se</a>
+        <a href="{{ route('login') }}" class="btn btn-login">Entrar</a>
+    @endauth
+</nav>
+         
 	        </ul>
 	      </div>
 	    </div>
