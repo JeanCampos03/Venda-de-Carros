@@ -9955,45 +9955,53 @@ textarea.form-control {
     gap: 12px;
 }
 
-/* Estilo base dos botões */
 .btn {
-    display: inline-block;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    border: none;
+  border: none;
+  color: white;
+  padding: 4px 8px;     /* antes era 16px 32px — reduzido pela metade */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;       /* texto um pouco menor */
+  margin: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-/* Botão "Entrar" */
+
 .btn-login {
-    background-color: #007bff;
+  background-color: transparent; 
+  color: white; 
+  border: none;
 }
+
 .btn-login:hover {
-    background-color: #0056b3;
+  background-color: #01d28e;
+  color: white;
 }
 
-/* Botão "Registrar" */
+.btn-login {background-color: #01d28e;}
+
 .btn-register {
-    background-color: #28a745;
+  background-color: transparent; 
+  color: #01d28e; 
+  border: 2px solid #01d28e;
 }
+
 .btn-register:hover {
-    background-color: #1e7e34;
+  background-color: #01d28e;
+  color: white;
 }
 
-/* Botão "Sair" */
+
 .btn-logout {
-    background-color: #dc3545;
-}
-.btn-logout:hover {
-    background-color: #a71d2a;
+  background-color: transparent; 
+  color: red !important; 
+  border: none;
 }
 
-/* Ajuste opcional para formulários inline (logout) */
-.nav-right form {
-    display: inline;
+
+.btn-logout:hover {
+  background-color: #ffffff;
+  color: white;
 }
