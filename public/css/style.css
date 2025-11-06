@@ -3495,7 +3495,8 @@ input[type="button"].btn-block {
   flex-grow: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+   ;}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -8165,12 +8166,19 @@ h1, h2, h3, h4, h5,
   color: #1089ff !important; }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: #000000 !important;
   position: absolute;
   top: 20px;
-  left: 0;
-  right: 0;
-  z-index: 3; }
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 80%;    
+  padding: 10px 20px; 
+  z-index: 3; 
+  border: 2px solid #000; /* adicionei o valor da borda */
+  border-radius: 15px; /* define o arredondamento das pontas */
+  box-shadow: 0 4px 10px rgba(128, 128, 128, 0.2);
+
+}
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
       background: #000000 !important;
@@ -8269,11 +8277,12 @@ h1, h2, h3, h4, h5,
       outline: none !important; }
   .ftco-navbar-light.scrolled {
     position: fixed;
-    right: 0;
-    left: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 80%;    
     top: 0;
     margin-top: -130px;
-    background: #fff !important;
+    background: #dfdfdf !important;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
     @media (max-width: 991.98px) {
@@ -10000,8 +10009,71 @@ textarea.form-control {
   border: none;
 }
 
-
 .btn-logout:hover {
   background-color: #ffffff;
   color: white;
+}
+
+/* Estilo base do dropdown */
+.custom-dropdown {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 8px 8px;
+  padding: 0;
+}
+
+/* Itens gerais do dropdown */
+.custom-dropdown .dropdown-item {
+  color: #f0f0f0;
+  padding: 10px 16px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover padrão */
+.custom-dropdown .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* Estilo especial para PERFIL */
+.custom-dropdown .perfil-item {
+  font-weight: 600;
+  color: #000000; 
+}
+
+/* Hover no PERFIL */
+.custom-dropdown .perfil-item:hover {
+  background-color: #D3D3D3;
+  color: #000;
+  transform: translateX(4px); /* leve movimento para a direita */
+}
+
+/* Botão SAIR */
+.custom-dropdown .btn-logout {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-weight: 600;
+  cursor: pointer;
+  
+}
+
+/* Hover do botão SAIR */
+.custom-dropdown .btn-logout:hover {
+  background-color: #ff4d4d;
+  color: #fff !important;
+  transform: translateX(4px);
+}
+
+/* Remover margem do formulário */
+.custom-dropdown form {
+  margin: 0;
+}
+
+.mt-navbar {
+  padding-top: 50px; /* ideal para navbar fixa */
+  margin-top: 60px; /* ajusta conforme a altura da sua navbar */
 }

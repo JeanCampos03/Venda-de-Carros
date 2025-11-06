@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+    <title>KaemeCar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -51,16 +51,18 @@
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="images/profile.jpg" alt=""
-                                style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"> Vasconha</span>
+                            <!--    <img class="rounded-circle me-lg-2" src="images/perfil-de-usuario.jpg" alt=""
+                                style="width: 40px; height: 40px;"> -->
+
+                            <span class="d-none d-lg-inline-flex"> {{ Auth::user()->name }}</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Perfil</a>
-                            <a ><form method="POST" action="{{ route('logout') }}">
+                        <div class="dropdown-menu dropdown-menu-end custom-dropdown">
+                            <a href="perfil" class="dropdown-item perfil-item">Perfil</a>
+
+                            <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button type="submit" class="btn btn-logout">Sair</button>
-                            </form></a>
+                                <button type="submit" class="dropdown-item btn-logout">Sair</button>
+                            </form>
                         </div>
                     </div>
                     @else
