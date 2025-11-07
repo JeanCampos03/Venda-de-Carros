@@ -10,17 +10,28 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
-                                    class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="images/profile.jpg" 
+                                    class="rounded-circle p-1" width="110">
                                 <div class="mt-3">
                                     <h4>{{ Auth::user()->name }}</h4>
                                     <p class="text-secondary mb-1">Full Stack Developer</p>
                                     <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                    <div class="card-body">
+                                    <form action="{{ route('perfil.destroy') }}" method="POST">  
+                                        @csrf 
+                                        @method('DELETE')
+                                        <div class="mt-3">            
+                                    <button type="submit" class="btn btn-danger">Excluir Conta</button>
+                                    </div>
+                                    </form>
+                                    <div class="card"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
 
                 <div class="col-lg-8">
                     <div class="card">
