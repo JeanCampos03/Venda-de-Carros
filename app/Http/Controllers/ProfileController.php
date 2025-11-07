@@ -21,6 +21,15 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function passdelete(Request $request): View
+    {
+        return view('profile.passdelete', [
+            'user' => $request->user(),
+        ]);
+    }
+
+    
+
     /**
      * Update the user's profile information.
      */

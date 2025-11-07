@@ -1,39 +1,7 @@
-@extends('index')
+@extends('profile.index')
 
-@section('conteudo')
-
-<div class="page-content mt-navbar">
-    <div class="container-profile">
-        <div class="main-body">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex flex-column align-items-center text-center">
-                                <img src="images/profile.jpg" 
-                                    class="rounded-circle p-1" width="110">
-                                <div class="mt-3">
-                                    <h4>{{ Auth::user()->name }}</h4>
-                                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                                    <div class="card-body">
-                                    <form action="{{ route('perfil.destroy') }}" method="POST">  
-                                        @csrf 
-                                        @method('DELETE')
-                                        <div class="mt-3">            
-                                    <button type="submit" class="btn btn-danger">Excluir Conta</button>
-                                    </div>
-                                    </form>
-                                    <div class="card"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <div class="col-lg-8">
+@section('form_change_user')
+<div class="col-lg-8">
                     <div class="card">
                         <div class="card-body">
                             <form action="{{ route('perfil.update') }}" method="POST">
@@ -57,24 +25,7 @@
                                             name="email">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Nova senha</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="password" class="form-control" placeholder="********"
-                                            name="password">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Confirmação de senha</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="password" class="form-control" placeholder="********"
-                                            name="password-confirmation">
-                                    </div>
-                                </div>
+                                
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
@@ -84,17 +35,4 @@
                             </form>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card"></div>
-                        </div>
-                    </div>
-
-                </div> <!-- /col-lg-8 -->
-            </div> <!-- /row -->
-        </div> <!-- /main-body -->
-    </div> <!-- /container-profile -->
-</div> <!-- /page-content -->
-
 @endsection
