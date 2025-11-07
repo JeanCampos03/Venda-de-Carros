@@ -2603,7 +2603,8 @@ input[type="button"].btn-block {
   top: auto;
   bottom: 100%;
   margin-top: 0;
-  margin-bottom: 0.125rem; }
+  margin-bottom: 0.125rem;
+ }
 
 .dropup .dropdown-toggle::after {
   display: inline-block;
@@ -3738,7 +3739,7 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-brand {
   color: #fff; }
-  .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  .navbar-dark, .navbar-dark .navbar-brand:focus {
     color: #fff; }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -8166,31 +8167,37 @@ h1, h2, h3, h4, h5,
   color: #1089ff !important; }
 
 .ftco-navbar-light {
-  background: #000000 !important;
+  background: #fffdff !important;
   position: absolute;
-  top: 20px;
+  top: 5px;
   left: 50%; 
   transform: translateX(-50%); 
   width: 80%;    
   padding: 10px 20px; 
   z-index: 3; 
-  border: 2px solid #000; /* adicionei o valor da borda */
+  border: 2px solid; /* adicionei o valor da borda */
   border-radius: 15px; /* define o arredondamento das pontas */
   box-shadow: 0 4px 10px rgba(128, 128, 128, 0.2);
 
 }
+
+.ftco-navbar-light .navbar-brand:hover {
+        color: #000000 !important; } 
+
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000000 !important;
+      background: #fffdff !important;
       position: relative;
+      border: 2px solid; /* adicionei o valor da borda */
+      border-radius: 15px;
       top: 0; } }
   .ftco-navbar-light .navbar-brand {
-    color: #fff; }
+    color: #000000; }
     .ftco-navbar-light .navbar-brand span {
       color: #01d28e; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-brand {
-        color: #fff; } }
+        color: #000000; } }
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav {
       padding-bottom: 10px; } }
@@ -8200,11 +8207,11 @@ h1, h2, h3, h4, h5,
     padding-bottom: .9rem;
     padding-left: 20px;
     padding-right: 20px;
-    color: #fff;
+    color: #000000 !important;
     font-weight: 400;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: #01d28e; }
+      color: #01d28e !important; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
         padding-left: 0;
@@ -8280,11 +8287,24 @@ h1, h2, h3, h4, h5,
     left: 50%; 
     transform: translateX(-50%); 
     width: 80%;    
-    top: 0;
+    top: 5px;
+    border: 2px solid #343434; /* adicionei o valor da borda */
     margin-top: -130px;
-    background: #dfdfdf !important;
+    background: #343434 !important;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
+
+    .ftco-navbar-light.scrolled .nav-item > .nav-link {
+      color: #fff !important;
+    }
+        .ftco-navbar-light .oi-menu {
+      color: #000000;
+    }
+
+    .ftco-navbar-light.scrolled .oi-menu {
+      color: #fff;
+    }
+
     @media (max-width: 991.98px) {
       .ftco-navbar-light.scrolled .nav-item > .nav-link {
         padding-left: 0 !important;
@@ -8313,7 +8333,7 @@ h1, h2, h3, h4, h5,
     @media (max-width: 991.98px) {
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
-        border-radius: 0px;
+        border-radius: 2px;
         padding-left: 0rem !important;
         padding-right: 0rem !important; } }
     .ftco-navbar-light.scrolled .navbar-toggler {
@@ -8328,7 +8348,13 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light.scrolled .nav-link {
       padding-top: 0.9rem !important;
       padding-bottom: 0.9rem !important;
-      color: #000000 !important; }
+      color: #fff !important; }
+
+      .ftco-navbar-light.scrolled .nav-link:hover {
+      text-decoration: none;
+      color: #01d28e !important;
+      outline: none !important; }
+
       .ftco-navbar-light.scrolled .nav-link.active {
         color: #1089ff !important; }
     .ftco-navbar-light.scrolled.awake {
@@ -8341,7 +8367,10 @@ h1, h2, h3, h4, h5,
       -o-transition: .3s all ease-out;
       transition: .3s all ease-out; }
     .ftco-navbar-light.scrolled .navbar-brand {
-      color: #000000; }
+      color: #fff; }
+
+    .ftco-navbar-light .navbar-brand:hover {
+      color: #fff !important; }
 
 .navbar-brand {
   font-weight: 800;
@@ -8366,8 +8395,8 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     content: '';
     opacity: .3;
-    background: #000000;
-    height: 850px; }
+    background: #fff;
+    height: 800px; }
   @media (max-width: 991.98px) {
     .hero-wrap {
       height: 1150px; }
@@ -8425,26 +8454,29 @@ h1, h2, h3, h4, h5,
     line-height: 1.5;
     color: white; }
   .slider-text .breadcrumbs {
+    color: #000 !important;
     font-size: 14px;
     margin-bottom: 20px;
     z-index: 99;
     text-transform: uppercase;
     font-weight: 500; }
     .slider-text .breadcrumbs span {
-      color: rgba(255, 255, 255, 0.7); }
+      color: rgba(0, 0, 0, 0.7); }
       .slider-text .breadcrumbs span i {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, 0.5);
         font-size: 13px; }
       .slider-text .breadcrumbs span a {
-        color: rgba(255, 255, 255, 0.7); }
+        color: rgba(0, 0, 0, 0.7); }
         .slider-text .breadcrumbs span a:hover, .slider-text .breadcrumbs span a:focus {
-          color: #1089ff; }
+          color: #01d28e; }
           .slider-text .breadcrumbs span a:hover i, .slider-text .breadcrumbs span a:focus i {
-            color: #1089ff; }
+            color: #01d28e; }
   .slider-text .bread {
+    font-family: 'Poppins', sans-serif;
     font-weight: 400 !important;
     position: relative;
-    line-height: .8; }
+    line-height: .8; 
+    color: #000;}   
 
 .featured-top {
   margin-top: -250px; }
@@ -9979,17 +10011,17 @@ textarea.form-control {
 
 
 .btn-login {
-  background-color: transparent; 
+  background-color: #01d28e;
   color: white; 
   border: none;
 }
 
 .btn-login:hover {
-  background-color: #01d28e;
+  background-color: #039666;
   color: white;
 }
 
-.btn-login {background-color: #01d28e;}
+
 
 .btn-register {
   background-color: transparent; 
