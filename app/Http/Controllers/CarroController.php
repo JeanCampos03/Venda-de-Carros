@@ -16,7 +16,7 @@ class CarroController extends Controller
 
         //compact
         //echo "chegou no controller carros";
-        return view('carros.index',
+        return view('carro.index',
         compact('carros'));
     }
 
