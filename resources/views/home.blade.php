@@ -1,7 +1,18 @@
 @extends('index')
 
 @section('conteudo')
+@auth
 
+<section class="admin-welcome-section">
+  <div class="admin-welcome-container">
+    <h1 class="admin-title">Bem-vindo à Área Administrativa</h1>
+    <p class="admin-subtitle">Gerencie cadastros de veiculos, marcas, modelos, cores e configurações do usuário com facilidade.</p>
+    <div class="admin-divider"></div>
+  </div>
+</section>
+ 
+
+@else
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/escalade.jpg');"
     data-stellar-background-ratio="0.5">
@@ -11,6 +22,7 @@
         </div>
     </div>
 </section>
+@endauth
 
 <section class="ftco-section bg-light">
     <div class="container">

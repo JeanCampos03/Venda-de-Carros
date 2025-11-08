@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -36,11 +37,7 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
-        User::create([
-        'name' => 'Admin',
-        'email' => 'admin@site.com',
-        'password' => \Illuminate\Support\Facades\Hash::make('12345678')
-    ]);
+        
 }
 
     /**

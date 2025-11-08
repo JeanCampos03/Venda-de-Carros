@@ -3,6 +3,11 @@
 
 <head>
     <title>KaemeCar</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,6 +35,8 @@
 </head>
 
 <body>
+
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="{{route ('home')}}">Kaeme<span>Car</span></a>
@@ -40,12 +47,11 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">Marcas</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Carros</a></li>
-                    <div class="dropdown-container">
-</div>
                     @auth
-                    <li class="nav-item"><a href="#" class="nav-link">Administração</a></li>
+                    <li class="nav-item"><a href= "{{ route ('index.marca') }}" class="nav-link">Marcas</a></li>
+                    <li class="nav-item"><a href="{{ route ('index.modelo') }}" class="nav-link">Modelos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Cores</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Veiculos</a></li>
 
                     <nav class="nav-right"></nav>
 
@@ -58,6 +64,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end custom-dropdown">
                             <a href="perfil" class="dropdown-item perfil-item">Perfil</a>
+                            <a href="{{ route ('marca.cadastro')}}" class="dropdown-item perfil-item">Cadastros</a>
 
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -79,6 +86,7 @@
 
 
     @yield('conteudo')
+    @yield('conteudo_marca')
     @yield('conteudo_carro')
 
     <script src="js/jquery.min.js"></script>

@@ -42,8 +42,15 @@ php artisan key:generate
 
 ### 6️⃣ Subir as migrations
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
+- Cria todas as tabelas;
+- Insere o usuário padrão automaticamente
+
+Cria user automaticamente:
+email : admin@site.com
+password' => 12345678
+
 ---
 
 ### 7️⃣ Iniciar o servidor local

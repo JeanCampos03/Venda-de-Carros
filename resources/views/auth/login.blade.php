@@ -19,7 +19,7 @@
         <h3>Login</h3>
 
         <label for="username">Nome</label>
-        <input type="text" placeholder="Email or Phone" id="username" name="email">
+        <input type="text" placeholder="Email" id="username" name="email">
 
         <label for="password">Senha</label>
         <input type="password" placeholder="Password" id="password" name="password">

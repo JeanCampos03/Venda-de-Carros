@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Carro;
+use App\Models\Carro;
 
 class CarroController extends Controller
 {
@@ -21,7 +21,7 @@ class CarroController extends Controller
     }
 
 
-    public function cadastrarNovoCarro(Request $request)
+    public function cadastrarNovoCarro(Request $request): RedirectResponse
     {
         $carro = new Carro();
         $carro->url_foto = $request->input('url_foto');
@@ -35,7 +35,7 @@ class CarroController extends Controller
                 
         $carro->save();
 
-        return redirect()->route('carro.index');
+        return Redirect::to('/');
     }
 
 

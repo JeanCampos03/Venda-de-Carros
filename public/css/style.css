@@ -10098,3 +10098,57 @@ textarea.form-control {
   padding-top: 50px; /* ideal para navbar fixa */
   margin-top: 60px; /* ajusta conforme a altura da sua navbar */
 }
+
+.admin-welcome-section {
+  margin-top: 100px;
+  background: transparent;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-welcome-container {
+  max-width: 700px;
+}
+
+.admin-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.admin-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  color: #01d28e;
+}
+
+.admin-divider {
+  width: 100px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 5px;
+  margin: 0 auto 2rem;
+}
+
+.admin-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #1e3a8a;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+

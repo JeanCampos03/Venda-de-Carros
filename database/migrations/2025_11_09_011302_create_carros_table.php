@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('carros', function (Blueprint $table) {
         $table->id();
         $table->string('url_foto')->nullable(); 
-        $table->string('marca'); 
-        $table->string('modelo');                 
-        $table->string('cor');                
+        $table->foreignId('marca_id')->constrained('marcas')->onDelete('cascade');
+        $table->foreignId('modelo_id')->constrained('modelos')->onDelete('cascade');
+        $table->foreignId('cor_id')->constrained('cor')->onDelete('cascade');          
         $table->string('ano_fabricacao')->nullable();     
         $table->integer('quilometragem')->nullable();     
         $table->decimal('valor_total', 10, 2);         
