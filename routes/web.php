@@ -15,6 +15,10 @@ Route::middleware('auth')->group(function () {
         return view('index');
     });
 
+        Route::get('/carro/cadastrar', function () {
+        return view('carro.index');
+    });
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware('verified')->name('dashboard');
