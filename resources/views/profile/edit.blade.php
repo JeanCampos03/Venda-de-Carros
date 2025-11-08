@@ -1,38 +1,55 @@
 @extends('profile.index')
 
 @section('form_change_user')
-<div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="{{ route('perfil.update') }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Nome Completo</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="{{ Auth::user()->name }}"
-                                            name="name">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Email</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="{{ Auth::user()->email }}"
-                                            name="email">
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-success px-4" value="Salvar Mudanças">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+<nav class="nav-menu">
+    <ul class="nav-list">
+        <li class="nav-item">
+
+            <a href="{{ route('perfil.edit') }}" class="nav-link nav-link--active">Perfil</a>
+        </li>
+        <li class="nav-item">
+
+            <a href="{{ route('password.confirm') }}" class="nav-link">Alterar Senha</a>
+        </li>
+        <li class="nav-item">
+
+            <a href="{{ route('delete.password') }}" class="nav-link">Deletar Conta</a>
+        </li>
+    </ul>
+</nav>
+</aside>
+
+<main class="content-main">
+    <h2 class="content-title">Dados do Perfil</h2>
+
+    <form class="profile-form" action="{{ route('perfil.update') }}" method="POST">
+        @csrf
+        @method('PATCH')
+
+        <div class="form-grid">
+
+            <div class="form-group form-group--inline">
+                <label for="full-name-prefix" class="form-label">Nome Completo</label>
+                <div class="input-inline-group">
+                    <input type="text" id="full-name" class="input-field" placeholder="John Smith"
+                        value="{{ Auth::user()->name }}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="input-field" value="{{ Auth::user()->email }}">
+            </div>
+
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-success">Salvar Mudanças</button>
+            </div>
+        </div>
+    </form>
+</main>
+</div>
 @endsection

@@ -1,51 +1,67 @@
 @extends('profile.index')
 
-@section('form_edit_passwd')
-<div class="col-lg-8">
-    <div class="card">
-        <div class="card-body">
-            <form action="{{ route('password.update') }}" method="POST">
-                @csrf
-                @method('put')
-                @if (session('status') === 'password-updated')
-                <div class="alert alert-success">
-                    Senha atualizada com sucesso!
-                </div>
-                @endif
-                <div class="row mb-3">
-                    <div class="col-sm-3">
-                        <h6 class="mb-0">Senha Atual</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <input type="password" class="form-control" name="current_password">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-3">
-                        <h6 class="mb-0">Senha nova</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                </div>
+@section('form_delete_user')
 
-                <div class="row mb-3">
-                    <div class="col-sm-3">
-                        <h6 class="mb-0">Confirme a nova senha</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <input type="password" class="form-control" name="password_confirmation">
-                    </div>
-                </div>
+<nav class="nav-menu">
+    <ul class="nav-list">
+        <li class="nav-item">
 
+            <a href="{{ route('perfil.edit') }}" class="nav-link">Perfil</a>
+        </li>
+        <li class="nav-item">
 
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-9 text-secondary">
-                        <input type="submit" class="btn btn-success px-4" value="Salvar Mudanças">
-                    </div>
-                </div>
-            </form>
+            <a href="{{ route('password.confirm') }}" class="nav-link nav-link--active">Alterar Senha</a>
+        </li>
+        <li class="nav-item">
+
+            <a href="{{ route('delete.password') }}" class="nav-link">Deletar Conta</a>
+        </li>
+    </ul>
+</nav>
+</aside>
+
+<main class="content-main">
+    <h2 class="content-title">Alteraçao de Senha</h2>
+
+    <form class="profile-form" action="{{ route('password.update') }}" method="POST">
+        @csrf
+        @method('put')
+        @if (session('status') === 'password-updated')
+        <div class="alert alert-success">
+            Senha atualizada com sucesso!
         </div>
-    </div>
-    @endsection
+        @endif
+
+        <div class="form-grid">
+
+            <div class="form-group form-group--inline">
+                <label class="form-label">Senha Atual</label>
+                <div class="input-inline-group">
+                    <input type="password" name="current_password" id="current-passwd" class="input-field"
+                        placeholder="********">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Nova Senha</label>
+                <input type="password" id="new-passwd" class="input-field" name="password" placeholder="********">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Confirme a Nova Senha</label>
+                <input type="password" id="new-passwd-confirmation" class="input-field" name="password_confirmation"
+                    placeholder="********">
+            </div>
+
+            <div class="form-group">
+            </div>
+
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-success">Salvar Mudanças</button>
+            </div>
+        </div>
+    </form>
+</main>
+</div>
+@endsection

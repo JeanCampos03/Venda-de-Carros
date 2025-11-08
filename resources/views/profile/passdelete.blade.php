@@ -1,40 +1,59 @@
 @extends('profile.index')
 
-@section('form_delete_passwd')
-<div class="col-lg-8">
+@section('form_change_passwd')
 
-                    <div class="card">
-                        
-                        <div class="card-body">                                                    
-                            <form action="{{ route('perfil.destroy') }}" method="POST" class="p-4 rounded shadow-sm bg-light border">
-    @csrf
-    @method('delete')
+<nav class="nav-menu">
+    <ul class="nav-list">
+        <li class="nav-item">
 
-    <!-- Botão Voltar -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <a href="{{ route('perfil.edit') }}" class="btn btn-info">
-            <i class="fa fa-undo me-1"></i> Voltar
-        </a>
-    </div>
+            <a href="{{ route('perfil.edit') }}" class="nav-link">Perfil</a>
+        </li>
+        <li class="nav-item">
 
-    <!-- Campo de Senha -->
-    <div class="mb-3">
-        <label for="password" class="form-label fw-semibold">
-            Digite sua senha para confirmar a exclusão da conta:
-        </label>
-        <input type="password" id="password" name="password"
-               class="form-control border-danger-subtle shadow-sm"
-               placeholder="Digite sua senha..." required>
-    </div>
+            <a href="{{ route('password.confirm') }}" class="nav-link">Alterar Senha</a>
+        </li>
+        <li class="nav-item">
 
-    <!-- Botão de exclusão -->
-    <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-danger px-4"
-                onclick="return confirm('Tem certeza que deseja excluir sua conta? Esta ação não poderá ser desfeita.')">
-            <i class="fa fa-trash me-1"></i> Excluir Conta
-        </button>
-    </div>
-</form>
-                        </div>
-                    </div>
+            <a href="{{ route('delete.password') }}" class="nav-link nav-link--active">Deletar Conta</a>
+        </li>
+    </ul>
+</nav>
+</aside>
+
+<main class="content-main">
+    <h2 class="content-title">Configurações do Perfil</h2>
+
+    <form class="profile-form" action="{{ route('perfil.destroy') }}" method="POST">
+        @csrf
+        @method('delete')
+
+        <div class="form-grid">
+
+            <div class="form-group form-group--inline">
+                <label for="full-name-prefix" class="form-label">Digite sua senha para confirmar a exclusão da
+                    conta:</label>
+                <div class="input-inline-group">
+                    <input type="password" id="full-name" class="input-field" placeholder="Digite sua senha..."
+                        name="password">
+                </div>
+            </div>
+
+            <label for="password" class="form-label fw-semibold">
+
+            </label>
+
+            <div class="form-group"></div>
+
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-danger"
+                    onclick="return confirm('Tem certeza que deseja excluir sua conta? Esta ação não poderá ser desfeita.')">Excluir
+                    Conta</button>
+            </div>
+        </div>
+    </form>
+</main>
+</div>
 @endsection
