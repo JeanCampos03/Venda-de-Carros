@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('carros', function (Blueprint $table) {
         $table->id();
-        $table->string('url_foto')->nullable(); 
+        $table->string('url_foto1')->nullable();
+        $table->string('url_foto2')->nullable();
+        $table->string('url_foto3')->nullable(); 
         $table->foreignId('marca_id')->constrained('marcas')->onDelete('cascade');
         $table->foreignId('modelo_id')->constrained('modelos')->onDelete('cascade');
         $table->foreignId('cor_id')->constrained('cores')->onDelete('cascade');          

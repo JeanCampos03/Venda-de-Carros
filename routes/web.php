@@ -61,8 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/veiculo', [CarroController::class, 'index'])
         ->name('index.veiculo');
 
-    Route::get('/cadastrar-veiculo', function () {
-        return view('veiculo.cadastrar');
+    Route::get('/cadastrar-veiculo', function () {      
+        return view('carro.cadastrar');
     }) -> name('veiculo.cadastro');
 
     Route::post('/cadastrar-veiculo', [CarroController::class, 'cadastrarNovoVeiculo'])

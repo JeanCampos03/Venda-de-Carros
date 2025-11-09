@@ -27,7 +27,7 @@
                         <th>Modelo</th>
                         <th>Cor</th>
                         <th>Ano Fabricação</th>
-                        <th>KM</th>
+                        <th>KM </th>
                         <th>Valor</th>
                         <th>Imagens Salvas</th>
                         <th>Detalhes</th>
@@ -39,6 +39,12 @@
                     @foreach($carros as $carro)
                     <tr>
                         <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>
+                        <td>{{ $carro->nome }}</td>                        
                         <td>
                             <a href="" class="btn btn--primary btn-sm">Editar</a>
                             <form action="" method="POST" style="display:inline;">

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Carro;
+use App\Models\Modelo;
+use App\Models\Cor;
+use App\Models\Marca;
 
 class CarroController extends Controller
 {
@@ -20,21 +23,33 @@ class CarroController extends Controller
         compact('carros'));
     }
 
+        public function create()
+    {
+        $modelos = Modelo::all(); // busca todas as marcas do banco
+        $marcas = Marca::all(); // busca todas as marcas do banco
+        $cores = Cor::all(); // busca todas as marcas do banco
+
+    return view('veiculo.cadastrar', compact('modelos','marcas', 'cores'));
+    }
+
 
     public function cadastrarNovoVeiculo(Request $request): RedirectResponse
     {
 
          $request->validate([
-        'nome' => 'required|string|max:255|unique:cores,nome',
+        'ano' => 'required',
+        'quilometragem' => 'required',
+        'valor' => 'required'
     ], [
-        'nome.required' => 'O nome da marca é obrigatório.',
-        'nome.unique' => 'Esta cor já está cadastrada.',
+        'ano.required' => 'O ano de fabricação é obrigatório.',
+        'quilometragem.required' => 'O ano de fabricação é obrigatório.',
+        'valor.required' => 'O ano de fabricação é obrigatório.',
     ]);
 
-
-
         $carro = new Carro();
-        $carro->url_foto = $request->input('url_foto');
+        $carro->url_foto1 = $request->input('url_foto1');
+        $carro->url_foto2 = $request->input('url_foto2');
+        $carro->url_foto3 = $request->input('url_foto3');
         $carro->marca = $request->input('marca');
         $carro->modelo = $request->input('modelo');
         $carro->cor = $request->input('cor');
@@ -45,7 +60,7 @@ class CarroController extends Controller
                 
         $carro->save();
 
-        return Redirect::to('/');
+        return redirect()->route('veiculo.cadastro')->with('success', 'Veículo cadastrada com sucesso!');
     }
 
 

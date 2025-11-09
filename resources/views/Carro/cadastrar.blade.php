@@ -10,10 +10,10 @@
             <a href="{{ route('modelo.cadastro') }}" class="nav-link">Modelo</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('cor.cadastro') }}" class="nav-link nav-link--active">Cor</a>
+            <a href="{{ route('cor.cadastro') }}" class="nav-link">Cor</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('veiculo.cadastro') }}" class="nav-link">Veiculo</a>
+            <a href="{{ route('veiculo.cadastro') }}" class="nav-link nav-link--active">Veiculo</a>
         </li>
     </ul>
 </nav>
@@ -21,9 +21,9 @@
 
 <main class="content-main">
     <div class="botao-container">
-        <a href="{{ route ('index.cor')}}" class="btn btn-voltar">Cores Cadastradas</a>
+        <a href="{{ route ('index.veiculo')}}" class="btn btn-voltar">Veiculos Cadastrados</a>
     </div>
-    <h2 class="content-title">Cadastrar Cor</h2>
+    <h2 class="content-title">Cadastrar Veiculo</h2>
 
     <form class="profile-form" action="{{ route('cadastrar.cor') }}" method="POST">
         @csrf
@@ -39,13 +39,19 @@
 
         <div class="form-grid">
 
-            <div class="form-group form-group--inline">
-                <label for="full-name-prefix" class="form-label">Nome Cor</label>
-
-                <div class="input-inline-group">
-                    <input type="text" id="full-name" class="input-field" name="nome">
-                </div>
+<!-- url_foto	marca_id	modelo_id	cor_id	ano_fabricacao	quilometragem	valor_total	detalhes -->
+    
+            <            <div class="form-group form-group--inline">
+                <label for="full-name-prefix" class="form-label">Nome Marca</label>
+                <select id="marca" name="marca_id" class="input-field">
+                    <option value="">Selecione uma marca</option>
+                    @foreach($marcas as $marca)
+                    <option value="{{ $marca->id }}">{{ $marca->nome }}</option>
+                    @endforeach
+                </select>
             </div>
+
+            
             <div class="form-group">
             </div>
             <div class="form-group">

@@ -9,9 +9,16 @@ class Carro extends Model
 {
     protected $table = 'carros';
     protected $fillable = [
-        'marca_id', 'modelo_id', 'cor_id',
-        'ano_fabricacao', 'quilometragem', 'valor',
-        'detalhes', 'foto_principal'
+        'marca_id', 
+        'modelo_id', 
+        'cor_id',
+        'ano_fabricacao', 
+        'quilometragem', 
+        'valor',
+        'detalhes', 
+        'url_foto1',
+        'url_foto2',
+        'url_foto3'
     ];
 
     public function marca() { return $this->belongsTo(Marca::class); }

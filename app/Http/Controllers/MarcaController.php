@@ -27,7 +27,7 @@ class MarcaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function cadastrarNovaMarca(Request $request)
+    public function cadastrarNovaMarca(Request $request): RedirectResponse
     {
 
         $request->validate([
