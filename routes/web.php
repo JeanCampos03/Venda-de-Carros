@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\CorController;
+use App\Http\Controllers\CarroController;
 use Illuminate\Support\Facades\Route;
 
 // 🔹 Rota pública (visível para todos)
@@ -56,6 +57,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/cadastrar-cor', [CorController::class, 'cadastrarNovaCor'])
     ->name('cadastrar.cor');
     
+
+    Route::get('/veiculo', [CarroController::class, 'index'])
+        ->name('index.veiculo');
+
+    Route::get('/cadastrar-veiculo', function () {
+        return view('veiculo.cadastrar');
+    }) -> name('veiculo.cadastro');
+
+    Route::post('/cadastrar-veiculo', [CarroController::class, 'cadastrarNovoVeiculo'])
+    ->name('cadastrar.veiculo');
+
     Route::get('/perfil', [ProfileController::class, 'edit'])->name('perfil.edit');
     Route::patch('/perfil', [ProfileController::class, 'update'])->name('perfil.update');
     Route::delete('/perfil', [ProfileController::class, 'destroy'])->name('perfil.destroy');

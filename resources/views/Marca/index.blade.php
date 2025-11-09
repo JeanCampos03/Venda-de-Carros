@@ -9,7 +9,7 @@
             <li class="nav-item"><a href="{{route('index.marca')}}" class="nav-link nav-link--active">Marcas</a></li>
             <li class="nav-item"> <a href="{{route('index.modelo')}}" class="nav-link">Modelos</a></li>
             <li class="nav-item"><a href="{{route('index.cor')}}" class="nav-link">Cores</a></li>
-            <li class="nav-item"><a href="" class="nav-link">Veiculos</a></li>
+            <li class="nav-item"><a href="{{route('index.veiculo')}}" class="nav-link">Veiculos</a></li>
         </ul>
     </nav>
 </aside>
@@ -23,7 +23,6 @@
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Marca</th>
                         <th>Ações</th>
                     </tr>
@@ -31,7 +30,6 @@
                 <tbody>
                     @foreach($marcas as $marca)
                     <tr>
-                        <td>{{ $marca->id }}</td>
                         <td>{{ $marca->nome }}</td>
                         <td>
                             <a href="" class="btn btn--primary btn-sm">Editar</a>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cor', function (Blueprint $table) {
+        Schema::create('cores', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->unique();
             $table->timestamps();

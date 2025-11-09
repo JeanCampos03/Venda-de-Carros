@@ -38,7 +38,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 280px;
+    width: 125px;
     padding: 30px 0;
     border-right: 1px solid var(--color-border);
     background-color: #faf7ff;
@@ -305,10 +305,10 @@ body {
 }
 
 .styled-table {
-    width: 90%; /* Mantém a tabela proporcional */
-    max-width: 900px;
+    width: 110%; /* Mantém a tabela proporcional */
+    max-width: 2000px;
     border-collapse: collapse;
-    text-align: left;
+    text-align: center;
     background-color: var(--color-surface);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;

@@ -21,8 +21,18 @@ class CarroController extends Controller
     }
 
 
-    public function cadastrarNovoCarro(Request $request): RedirectResponse
+    public function cadastrarNovoVeiculo(Request $request): RedirectResponse
     {
+
+         $request->validate([
+        'nome' => 'required|string|max:255|unique:cores,nome',
+    ], [
+        'nome.required' => 'O nome da marca é obrigatório.',
+        'nome.unique' => 'Esta cor já está cadastrada.',
+    ]);
+
+
+
         $carro = new Carro();
         $carro->url_foto = $request->input('url_foto');
         $carro->marca = $request->input('marca');

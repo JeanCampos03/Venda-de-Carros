@@ -35,7 +35,7 @@ class CorController extends Controller
     {
         
         $request->validate([
-        'nome' => 'required|string|max:255|unique:cor,nome',
+        'nome' => 'required|string|max:255|unique:cores,nome',
     ], [
         'nome.required' => 'O nome da marca é obrigatório.',
         'nome.unique' => 'Esta cor já está cadastrada.',
