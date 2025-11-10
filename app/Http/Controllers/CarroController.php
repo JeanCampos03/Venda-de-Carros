@@ -23,36 +23,70 @@ class CarroController extends Controller
         compact('carros'));
     }
 
-        public function create()
+        public function create(Request $request)
     {
-        $modelos = Modelo::all(); // busca todas as marcas do banco
-        $marcas = Marca::all(); // busca todas as marcas do banco
-        $cores = Cor::all(); // busca todas as marcas do banco
 
-    return view('veiculo.cadastrar', compact('modelos','marcas', 'cores'));
+            // 1. Busca todas as marcas (cada uma com seus modelos)
+        $marcas = Marca::with('modelos')->get();
+
+        // 2. Busca todas as cores
+        $cores = Cor::all();
+
+        // 3. Verifica se o usuário selecionou uma marca
+        $modelos = collect(); // começa vazio
+
+        if ($request->filled('marca_id')) {
+            // Busca os modelos dessa marca
+            $modelos = Modelo::where('marca_id', $request->marca_id)->get();
+        }
+
+        return view('carro.cadastrar', compact('marcas', 'modelos', 'cores'));
+    
+    /*    $modelos = Modelo::with('marca')->get();
+
+        $marcas = $modelos
+        ->pluck('marca')      
+        ->unique('id')         
+        ->values();
+
+        $cores = Cor::all();
+
+        return view('carro.cadastrar', compact('modelos','marcas', 'cores'));*/
     }
 
 
-    public function cadastrarNovoVeiculo(Request $request): RedirectResponse
+    public function cadastrarNovoVeiculo(Request $request)
     {
 
-         $request->validate([
-        'ano' => 'required',
+        $request->validate([
+        'ano_fabricacao' => 'required',
         'quilometragem' => 'required',
-        'valor' => 'required'
+        'valor_total' => 'required',
+        'url_foto1' => 'required|url|max:255',
+        'url_foto2' => 'required|url|max:255',
+        'url_foto3' => 'required|url|max:255'
     ], [
-        'ano.required' => 'O ano de fabricação é obrigatório.',
-        'quilometragem.required' => 'O ano de fabricação é obrigatório.',
-        'valor.required' => 'O ano de fabricação é obrigatório.',
+        'ano_fabricacao.required' => 'O ano de fabricação é obrigatório.',
+        'quilometragem.required' => 'A quilometragem atual é obrigatória.',
+        'valor_total.required' => 'O valor do veículo é obrigatório.',
+        'url_foto1.required' => 'É obrigatório inserir a imagem 1.',
+        'url_foto2.required' => 'É obrigatório inserir a imagem 2.',
+        'url_foto3.required' => 'É obrigatório inserir a imagem 3.',
+        'url_foto1.url' => 'A imagem 1 deve ser um link válido.',
+        'url_foto2.url' => 'A imagem 2 deve ser um link válido.',
+        'url_foto3.url' => 'A imagem 3 deve ser um link válido.',
+        'url_foto1.max' => 'O link da imagem 1 é muito longo (máx. 255 caracteres).',
+        'url_foto2.max' => 'O link da imagem 2 é muito longo (máx. 255 caracteres).',
+        'url_foto3.max' => 'O link da imagem 3 é muito longo (máx. 255 caracteres).',
     ]);
 
         $carro = new Carro();
         $carro->url_foto1 = $request->input('url_foto1');
         $carro->url_foto2 = $request->input('url_foto2');
         $carro->url_foto3 = $request->input('url_foto3');
-        $carro->marca = $request->input('marca');
-        $carro->modelo = $request->input('modelo');
-        $carro->cor = $request->input('cor');
+        $carro->marca_id = $request->input('marca_id');
+        $carro->modelo_id = $request->input('modelo_id');
+        $carro->cor_id = $request->input('cor_id');
         $carro->ano_fabricacao = $request->input('ano_fabricacao');
         $carro->quilometragem = $request->input('quilometragem');
         $carro->valor_total = $request->input('valor_total');

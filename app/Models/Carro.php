@@ -14,7 +14,7 @@ class Carro extends Model
         'cor_id',
         'ano_fabricacao', 
         'quilometragem', 
-        'valor',
+        'valor_total',
         'detalhes', 
         'url_foto1',
         'url_foto2',

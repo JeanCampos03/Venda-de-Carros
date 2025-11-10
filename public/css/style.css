@@ -10152,3 +10152,6 @@ textarea.form-control {
   transform: translateY(-2px);
 }
 
+.cat {
+  color: #000 !important;
+}

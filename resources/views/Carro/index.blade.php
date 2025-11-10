@@ -23,28 +23,26 @@
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>Modelo</th>
+                        <th>Marca</th>
                         <th>Modelo</th>
                         <th>Cor</th>
                         <th>Ano Fabricação</th>
                         <th>KM </th>
                         <th>Valor</th>
-                        <th>Imagens Salvas</th>
                         <th>Detalhes</th>
                         <th>Opções</th>
-                       <!-- url_foto	marca_id	modelo_id	cor_id	ano_fabricacao	quilometragem	valor_total	detalhes -->
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($carros as $carro)
                     <tr>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>
-                        <td>{{ $carro->nome }}</td>                        
+                        <td>{{ $carro->marca->nome}}</td>
+                        <td>{{ $carro->modelo->nome}}</td>
+                        <td>{{ $carro->cor->nome }}</td>
+                        <td>{{ $carro->ano_fabricacao}}</td>
+                        <td>{{ $carro->quilometragem}}</td>
+                        <td>{{ $carro->valor_total}}</td>
+                        <td>{{ $carro->detalhes }}</td>                        
                         <td>
                             <a href="" class="btn btn--primary btn-sm">Editar</a>
                             <form action="" method="POST" style="display:inline;">

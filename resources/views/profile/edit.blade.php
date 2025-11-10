@@ -25,21 +25,20 @@
 
     <form class="profile-form" action="{{ route('perfil.update') }}" method="POST">
         @csrf
-        @method('PATCH')
+        @method('patch')
 
         <div class="form-grid">
 
             <div class="form-group form-group--inline">
                 <label for="full-name-prefix" class="form-label">Nome Completo</label>
                 <div class="input-inline-group">
-                    <input type="text" id="full-name" class="input-field" placeholder="John Smith"
-                        value="{{ Auth::user()->name }}">
+                    <input name='name'type="text" id="full-name" class="input-field" value="{{ Auth::user()->name }}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="input-field" value="{{ Auth::user()->email }}">
+                <input name="email" type="email" id="email" class="input-field" value="{{ Auth::user()->email }}">
             </div>
 
             <div class="form-group">

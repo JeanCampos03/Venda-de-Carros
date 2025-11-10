@@ -27,6 +27,9 @@
 
     <form class="profile-form" action="{{ route('cadastrar.cor') }}" method="POST">
         @csrf
+        @if(session('success'))
+        <p class="alert alert-success">{{ session('success') }}</p>
+        @endif
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

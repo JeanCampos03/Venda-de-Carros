@@ -50,8 +50,8 @@
                     @auth
                     <li class="nav-item"><a href= "{{ route ('index.marca') }}" class="nav-link">Marcas</a></li>
                     <li class="nav-item"><a href="{{ route ('index.modelo') }}" class="nav-link">Modelos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Cores</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Veiculos</a></li>
+                    <li class="nav-item"><a href="{{ route ('index.cor') }}" class="nav-link">Cores</a></li>
+                    <li class="nav-item"><a href="{{ route ('index.veiculo') }}" class="nav-link">Veiculos</a></li>
 
                     <nav class="nav-right"></nav>
 

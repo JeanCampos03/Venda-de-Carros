@@ -13,7 +13,7 @@
             <a href="{{ route('cor.cadastro') }}" class="nav-link">Cor</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('delete.password') }}" class="nav-link">Veiculo</a>
+            <a href="{{ route('veiculo.cadastro') }}" class="nav-link">Veiculo</a>
         </li>
     </ul>
 </nav>
@@ -27,6 +27,9 @@
 
     <form class="profile-form" action="{{ route('cadastrar.modelo') }}" method="POST">
         @csrf
+        @if(session('success'))
+        <p class="alert alert-success">{{ session('success') }}</p>
+        @endif
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -57,8 +60,13 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-success">Cadastrar</button>
-        </div>
+
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-success">Cadastrar</button>
+
+            </div>
+
         </div>
     </form>
 </main>

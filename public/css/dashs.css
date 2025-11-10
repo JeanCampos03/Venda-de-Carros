@@ -156,6 +156,19 @@ body {
     gap: 20px;
     margin-bottom: 30px;
 }
+.form-grid-wrapper {
+  display: flex;
+  gap: 50px;
+  align-items: flex-end;
+  justify-content: center !important;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
 
 .form-group {
     display: flex;

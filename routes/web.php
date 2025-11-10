@@ -5,12 +5,11 @@ use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\CorController;
 use App\Http\Controllers\CarroController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // 🔹 Rota pública (visível para todos)
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // 🔒 Rotas protegidas (apenas para logados)
 Route::middleware('auth')->group(function () {
@@ -55,15 +54,13 @@ Route::middleware('auth')->group(function () {
     }) -> name('cor.cadastro');
 
     Route::post('/cadastrar-cor', [CorController::class, 'cadastrarNovaCor'])
-    ->name('cadastrar.cor');
-    
+    ->name('cadastrar.cor');    
 
     Route::get('/veiculo', [CarroController::class, 'index'])
         ->name('index.veiculo');
 
-    Route::get('/cadastrar-veiculo', function () {      
-        return view('carro.cadastrar');
-    }) -> name('veiculo.cadastro');
+    Route::get('/cadastrar-veiculo',  [CarroController::class, 'create'])
+    -> name('veiculo.cadastro');
 
     Route::post('/cadastrar-veiculo', [CarroController::class, 'cadastrarNovoVeiculo'])
     ->name('cadastrar.veiculo');
