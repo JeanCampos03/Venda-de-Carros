@@ -70,9 +70,9 @@
                                 R$ {{ number_format($carro->valor_total, 2, ',', '.') }}
                             </p>
                         </div>
-                        <p class="mb-1">Ano: {{ $carro->ano_fabricacao }}</p>
-                        <p class="mb-1">Cor: {{ $carro->cor->nome ?? 'Indefinida' }}</p>
-                        <p class="mb-1">Km: {{ number_format($carro->quilometragem, 0, ',', '.') }} km</p>
+                        <p class="mb-1">Ano - {{ $carro->ano_fabricacao }}</p>
+                        <p class="mb-1">Cor - {{ $carro->cor->nome ?? 'Indefinida' }}</p>
+                        <p class="mb-1">Quilometragem - {{ number_format($carro->quilometragem, 0, ',', '.') }} km</p>
                         <p class="mb-1">{{ Str::limit($carro->detalhes, 80) }}</p>
                         <p class="d-flex justify-content-end mb-0">
                             <a href="#" class="btn btn-secondary py-2 mr-1">Ver mais</a>
