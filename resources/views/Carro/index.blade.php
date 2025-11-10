@@ -29,7 +29,6 @@
                         <th>Ano Fabricação</th>
                         <th>KM </th>
                         <th>Valor</th>
-                        <th>Detalhes</th>
                         <th>Opções</th>
                     </tr>
                 </thead>
@@ -41,8 +40,7 @@
                         <td>{{ $carro->cor->nome }}</td>
                         <td>{{ $carro->ano_fabricacao}}</td>
                         <td>{{ $carro->quilometragem}}</td>
-                        <td>{{ $carro->valor_total}}</td>
-                        <td>{{ $carro->detalhes }}</td>                        
+                        <td>{{ $carro->valor_total}}</td>              
                         <td>
                             <a href="" class="btn btn--primary btn-sm">Editar</a>
                             <form action="" method="POST" style="display:inline;">
