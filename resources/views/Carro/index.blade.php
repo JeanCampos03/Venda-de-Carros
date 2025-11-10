@@ -8,7 +8,6 @@
 
         <li class="nav-item"><a href="{{route('index.veiculo')}}" class="nav-link nav-link--active">Veiculos</a></li>
         <li class="nav-item"> <a href="{{route('veiculo.cadastro')}}" class="nav-link">Cadastrar</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Editar</a></li>
     </ul>
 </nav>
 </aside>
@@ -41,7 +40,7 @@
                     <td>{{ $carro->quilometragem}}</td>
                     <td>{{ $carro->valor_total}}</td>
                     <td>
-                        <a href="" class="btn btn--primary btn-sm">Editar</a>
+                        <a href="{{route ('veiculo.buscar', $carro->id)}}" class="btn btn--primary btn-sm">Editar</a>
                         <form action="" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

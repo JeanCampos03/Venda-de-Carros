@@ -24,7 +24,6 @@ Route::middleware('auth')->group(function () {
         return view('carro.index');
     });
 
-
         Route::get('/index', function () {
         return view('index');
     });
@@ -48,7 +47,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cadastrar-modelo', [ModeloController::class, 'cadastrarNovoModelo'])
     ->name('cadastrar.modelo');
 
-
     Route::get('/cor', [CorController::class, 'index'])
         ->name('index.cor');
 
@@ -65,8 +63,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/cadastrar-veiculo',  [CarroController::class, 'create'])
     -> name('veiculo.cadastro');
 
+    Route::get('/editar-veiculo',  [CarroController::class, 'update'])
+    -> name('veiculo.edita');
+
     Route::post('/cadastrar-veiculo', [CarroController::class, 'cadastrarNovoVeiculo'])
     ->name('cadastrar.veiculo');
+
+    Route::get('/editar-veiculo/{id}',[CarroController::class, 'buscarCarro'])->name('veiculo.buscar');
+
+    Route::post('/atualizar-veiculo', [ProfileController::class, 'ataualizarCarro'])->name('veiculo.atualizar');
 
     Route::get('/perfil', [ProfileController::class, 'edit'])->name('perfil.edit');
     Route::patch('/perfil', [ProfileController::class, 'update'])->name('perfil.update');

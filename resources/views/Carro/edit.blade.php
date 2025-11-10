@@ -1,13 +1,16 @@
 @extends('dashboard-config')
 
-@section('configs_marcas')
+@section('edit_veiculo')
 <nav class="nav-menu">
     <ul class="nav-list">
         <li class="nav-item">
             <a href="{{ route('index.veiculo') }}" class="nav-link">Veiculos</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('veiculo.cadastro') }}" class="nav-link nav-link--active">Cadastrar</a>
+            <a href="{{route('veiculo.cadastro')}}" class="nav-link">Cadastrar</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link nav-link--active">Edição</a>
         </li>
     </ul>
 </nav>
@@ -28,7 +31,7 @@
     </div>
     @endif
     <div class="form-grid-wrapper">
-        <form method="GET" action="{{ route('veiculo.cadastro') }}">
+        <form method="GET" action="{{ route('veiculo.edita') }}">
             <div class="form-group">
                 <label for="marca">Marca</label>
                 <select name="marca_id" id="marca" class="input-field" onchange="this.form.submit()">

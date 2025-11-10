@@ -41,17 +41,28 @@ class CarroController extends Controller
         }
 
         return view('carro.cadastrar', compact('marcas', 'modelos', 'cores'));
-    
-    /*    $modelos = Modelo::with('marca')->get();
 
-        $marcas = $modelos
-        ->pluck('marca')      
-        ->unique('id')         
-        ->values();
+    }
 
+            public function update(Request $request)
+    {
+
+            // 1. Busca todas as marcas (cada uma com seus modelos)
+        $marcas = Marca::with('modelos')->get();
+
+        // 2. Busca todas as cores
         $cores = Cor::all();
 
-        return view('carro.cadastrar', compact('modelos','marcas', 'cores'));*/
+        // 3. Verifica se o usuário selecionou uma marca
+        $modelos = collect(); // começa vazio
+
+        if ($request->filled('marca_id')) {
+            // Busca os modelos dessa marca
+            $modelos = Modelo::where('marca_id', $request->marca_id)->get();
+        }
+
+        return view('carro.edit', compact('marcas', 'modelos', 'cores'));
+
     }
 
 
@@ -105,7 +116,19 @@ class CarroController extends Controller
         if (!$carro)
             echo "Carro não encontrado";
 
-        return view('carro.alterar', compact('carro'));
+
+    $marcas = Marca::all();
+    $modelos = Modelo::where('marca_id', $carro->marca_id)->get();
+    $cores = Cor::all();
+        return view('carro.edit', compact('carro', 'marcas', 'modelos', 'cores'));
+
+    }
+
+        public function ataualizarCarro(Request $request) 
+    {
+        $carro = Carro::find($request->input('id'));
+        $carro->update($request->all());
+        return redirect()->route('carros.index');
 
     }
 
@@ -116,13 +139,7 @@ class CarroController extends Controller
         return view('detalhes', compact('carros'));
     }
 
-    public function ataualizarCarro(Request $request) 
-    {
-        $carro = Carro::find($request->input('id'));
-        $carro->update($request->all());
-        return redirect()->route('carros.index');
 
-    }
 }
 
 
