@@ -75,7 +75,7 @@
                         <p class="mb-1">Quilometragem - {{ number_format($carro->quilometragem, 0, ',', '.') }} km</p>
                         <p class="mb-1">{{ Str::limit($carro->detalhes, 80) }}</p>
                         <p class="d-flex justify-content-end mb-0">
-                            <a href="#" class="btn btn-secondary py-2 mr-1">Ver mais</a>
+                            <a href="detalhes/{{$carro->id}}" class="btn btn-secondary py-2 mr-1">Ver mais</a>
                         </p>
                     </div>
                 </div>

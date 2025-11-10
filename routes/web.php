@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 // 🔹 Rota pública (visível para todos)
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/detalhes/{id}', [CarroController::class, 'detalhes'])->name('veiculo.detalhes');
+
+
 // 🔒 Rotas protegidas (apenas para logados)
 Route::middleware('auth')->group(function () {
 

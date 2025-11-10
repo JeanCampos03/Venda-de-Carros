@@ -109,6 +109,13 @@ class CarroController extends Controller
 
     }
 
+    public function detalhes($id)
+    {
+        $carros = Carro::find($id);
+
+        return view('detalhes', compact('carros'));
+    }
+
     public function ataualizarCarro(Request $request) 
     {
         $carro = Carro::find($request->input('id'));

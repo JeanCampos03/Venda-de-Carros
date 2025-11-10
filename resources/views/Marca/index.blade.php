@@ -7,9 +7,8 @@
         <ul class="nav-list">
 
             <li class="nav-item"><a href="{{route('index.marca')}}" class="nav-link nav-link--active">Marcas</a></li>
-            <li class="nav-item"> <a href="{{route('index.modelo')}}" class="nav-link">Modelos</a></li>
-            <li class="nav-item"><a href="{{route('index.cor')}}" class="nav-link">Cores</a></li>
-            <li class="nav-item"><a href="{{route('index.veiculo')}}" class="nav-link">Veiculos</a></li>
+            <li class="nav-item"> <a href="{{route('marca.cadastro')}}" class="nav-link">Cadastrar</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Editar</a></li>
         </ul>
     </nav>
 </aside>

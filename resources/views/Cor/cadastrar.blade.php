@@ -4,25 +4,22 @@
 <nav class="nav-menu">
     <ul class="nav-list">
         <li class="nav-item">
-            <a href="{{ route('marca.cadastro') }}" class="nav-link">Marca</a>
+            <a href="{{ route('index.cor') }}" class="nav-link">Cores</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('modelo.cadastro') }}" class="nav-link">Modelo</a>
+            <a href="{{ route('cor.cadastro') }}" class="nav-link nav-link--active">Cadastrar</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('cor.cadastro') }}" class="nav-link nav-link--active">Cor</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('veiculo.cadastro') }}" class="nav-link">Veiculo</a>
+            <a href="#" class="nav-link">Editar</a>
         </li>
     </ul>
 </nav>
 </aside>
 
 <main class="content-main">
-    <div class="botao-container">
+    <!-- <div class="botao-container">
         <a href="{{ route ('index.cor')}}" class="btn btn-voltar">Cores Cadastradas</a>
-    </div>
+    </div> -->
     <h2 class="content-title">Cadastrar Cor</h2>
 
     <form class="profile-form" action="{{ route('cadastrar.cor') }}" method="POST">

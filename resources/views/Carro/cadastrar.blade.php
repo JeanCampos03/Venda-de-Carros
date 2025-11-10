@@ -4,25 +4,19 @@
 <nav class="nav-menu">
     <ul class="nav-list">
         <li class="nav-item">
-            <a href="{{ route('marca.cadastro') }}" class="nav-link">Marca</a>
+            <a href="{{ route('index.veiculo') }}" class="nav-link">Veiculos</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('modelo.cadastro') }}" class="nav-link">Modelo</a>
+            <a href="{{ route('veiculo.cadastro') }}" class="nav-link nav-link--active">Cadastrar</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('cor.cadastro') }}" class="nav-link">Cor</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('veiculo.cadastro') }}" class="nav-link nav-link--active">Veiculo</a>
+            <a href="" class="nav-link">Editar</a>
         </li>
     </ul>
 </nav>
 </aside>
 
 <main class="content-main">
-    <div class="botao-container">
-        <a href="{{ route ('index.veiculo')}}" class="btn btn-voltar">Veiculos Cadastrados</a>
-    </div>
     <h2 class="content-title">Cadastrar Veiculo</h2>
     @if(session('success'))
     <p class="alert alert-success">{{ session('success') }}</p>
