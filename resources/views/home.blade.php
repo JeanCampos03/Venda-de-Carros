@@ -15,14 +15,39 @@
 
 @else
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/escalade.jpg');"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+<section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
+    <div id="carrosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+
+            @foreach ($destaques as $index => $destaque)
+                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                    <div class="hero-slide" 
+                         style="background-image: url('{{ $destaque->url_foto2 }}');
+                                background-size: cover;
+                                background-position: center;
+                                height: 100vh;
+                                position: relative;">
+                        <div class="overlay"></div>
+                        <div class="container h-100 d-flex flex-column justify-content-end align-items-start text-white pb-5">
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
+
+        <!-- Setas de navegação -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
     </div>
 </section>
+
 @endauth
 
 <section class="ftco-section bg-light">

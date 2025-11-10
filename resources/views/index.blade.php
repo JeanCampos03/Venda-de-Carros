@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
     <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,7 +51,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     @auth
-                    <li class="nav-item"><a href= "{{ route ('index.marca') }}" class="nav-link">Marcas</a></li>
+                    <li class="nav-item"><a href="{{ route ('index.marca') }}" class="nav-link">Marcas</a></li>
                     <li class="nav-item"><a href="{{ route ('index.modelo') }}" class="nav-link">Modelos</a></li>
                     <li class="nav-item"><a href="{{ route ('index.cor') }}" class="nav-link">Cores</a></li>
                     <li class="nav-item"><a href="{{ route ('index.veiculo') }}" class="nav-link">Veiculos</a></li>
