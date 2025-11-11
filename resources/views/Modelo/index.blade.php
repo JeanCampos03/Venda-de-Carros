@@ -8,8 +8,7 @@
 
             <li class="nav-item"><a href="{{route('index.modelo')}}" class="nav-link nav-link--active">Modelos</a></li>
             <li class="nav-item"> <a href="{{route('modelo.cadastro')}}" class="nav-link">Cadastrar</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Editar</a></li>
-        </ul>
+            </ul>
     </nav>
 </aside>
 
@@ -33,7 +32,7 @@
                         <td>{{ $modelo->nome }}</td>
                         <td>{{ $modelo->marca->nome }}</td>
                         <td>
-                            <a href="{{ route ('marca.cadastro')}}" class="btn btn--primary btn-sm">Editar</a>
+                            <a href="{{ route ('modelo.buscar', $modelo->id)}}" class="btn btn--primary btn-sm">Editar</a>
                             <form action="" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')

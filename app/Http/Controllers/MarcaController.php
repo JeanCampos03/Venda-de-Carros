@@ -44,7 +44,22 @@ class MarcaController extends Controller
 
         return redirect()->route('marca.cadastro')->with('success', 'Marca cadastrada com sucesso!');
     }
-               
+
+    public function buscarMarca($id) 
+    {
+        $marca = Marca::find($id);
+
+        return view('marca.edit', compact('marca'));
+
+    }
+
+        public function ataualizarMarca(Request $request) 
+    {
+        $marca = Marca::find($request->input('id'));
+        $marca->update($request->all());
+        return redirect()->route('index.marca');
+
+    }             
 
     
 

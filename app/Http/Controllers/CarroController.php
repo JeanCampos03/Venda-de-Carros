@@ -44,7 +44,7 @@ class CarroController extends Controller
 
     }
 
-            public function update(Request $request)
+        public function update(Request $request)
     {
 
             // 1. Busca todas as marcas (cada uma com seus modelos)
@@ -66,7 +66,7 @@ class CarroController extends Controller
     }
 
 
-    public function cadastrarNovoVeiculo(Request $request)
+        public function cadastrarNovoVeiculo(Request $request)
     {
 
         $request->validate([
@@ -113,14 +113,19 @@ class CarroController extends Controller
     {
         $carro = Carro::find($id);
 
-        if (!$carro)
-            echo "Carro não encontrado";
+        // Carrega a marca do carro
+        $marca = Marca::find($carro->marca_id);
 
+        // Pega todas as marcas para o select
+        $marcas = Marca::all();
 
-    $marcas = Marca::all();
-    $modelos = Modelo::where('marca_id', $carro->marca_id)->get();
-    $cores = Cor::all();
-        return view('carro.edit', compact('carro', 'marcas', 'modelos', 'cores'));
+        // Pega apenas os modelos da marca desse carro
+        $modelos = Modelo::where('marca_id', $carro->marca_id)->get();
+
+        // Todas as cores disponíveis
+        $cores = Cor::all();
+
+        return view('carro.edit', compact('carro',  'marca', 'marcas', 'modelos', 'cores'));
 
     }
 
@@ -128,7 +133,7 @@ class CarroController extends Controller
     {
         $carro = Carro::find($request->input('id'));
         $carro->update($request->all());
-        return redirect()->route('carros.index');
+        return redirect()->route('index.veiculo');
 
     }
 

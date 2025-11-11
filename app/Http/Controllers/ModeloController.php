@@ -57,6 +57,24 @@ class ModeloController extends Controller
                          ->with('success', 'Modelo cadastrado com sucesso!');
     }
 
+        public function buscarModelo($id) 
+    {
+        $modelo = Modelo::find($id);
+
+        $marcas = Marca::all();
+
+        return view('modelo.edit', compact('modelo', 'marcas'));
+
+    }
+
+        public function ataualizarModelo(Request $request) 
+    {
+        $modelo = Modelo::find($request->input('id'));
+        $modelo->update($request->all());
+        return redirect()->route('index.modelo');
+
+    }
+
     /**
      * Display the specified resource.
      */

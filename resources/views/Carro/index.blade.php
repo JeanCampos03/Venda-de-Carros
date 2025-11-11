@@ -24,7 +24,7 @@
                     <th>Marca</th>
                     <th>Modelo</th>
                     <th>Cor</th>
-                    <th>Ano Fabricação</th>
+                    <th>Ano</th>
                     <th>KM </th>
                     <th>Valor</th>
                     <th>Opções</th>

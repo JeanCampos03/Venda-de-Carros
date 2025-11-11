@@ -9,9 +9,6 @@
         <li class="nav-item">
             <a href="{{ route('modelo.cadastro') }}" class="nav-link nav-link--active">Cadastrar</a>
         </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Editar</a>
-        </li>
     </ul>
 </nav>
 </aside>

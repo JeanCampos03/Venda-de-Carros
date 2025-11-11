@@ -71,7 +71,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/editar-veiculo/{id}',[CarroController::class, 'buscarCarro'])->name('veiculo.buscar');
 
-    Route::post('/atualizar-veiculo', [ProfileController::class, 'ataualizarCarro'])->name('veiculo.atualizar');
+    Route::post('/atualizar-veiculo/{id}', [CarroController::class, 'ataualizarCarro'])->name('veiculo.atualizar');
+
+    Route::get('/editar-modelo/{id}',[ModeloController::class, 'buscarModelo'])->name('modelo.buscar'); 
+
+    Route::post('/atualizar-modelo/{id}', [ModeloController::class, 'ataualizarModelo'])->name('modelo.atualizar');
+
+    Route::get('/editar-cor/{id}',[CorController::class, 'buscarCor'])->name('cor.buscar'); 
+
+    Route::post('/atualizar-cor/{id}', [CorController::class, 'ataualizarCor'])->name('cor.atualizar');
+
+    Route::get('/editar-marca/{id}',[MarcaController::class, 'buscarMarca'])->name('marca.buscar'); 
+
+    Route::post('/atualizar-marca/{id}', [MarcaController::class, 'ataualizarMarca'])->name('marca.atualizar');
+
+    
 
     Route::get('/perfil', [ProfileController::class, 'edit'])->name('perfil.edit');
     Route::patch('/perfil', [ProfileController::class, 'update'])->name('perfil.update');

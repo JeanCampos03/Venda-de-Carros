@@ -49,6 +49,22 @@ class CorController extends Controller
         return redirect()->route('cor.cadastro')->with('success', 'Cor cadastrada com sucesso!');
     }
 
+     public function buscarCor($id) 
+    {
+        $cor = Cor::find($id);
+
+        return view('cor.edit', compact('cor'));
+
+    }
+
+        public function ataualizarCor(Request $request) 
+    {
+        $cor = Cor::find($request->input('id'));
+        $cor->update($request->all());
+        return redirect()->route('index.cor');
+
+    }
+
     /**
      * Display the specified resource.
      */

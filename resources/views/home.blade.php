@@ -59,7 +59,7 @@
             @forelse ($carros as $carro)
             <div class="col-12 col-sm-6 col-md-4 mb-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url('{{ $carro->url_foto1 ?? asset('images/default-car.jpg') }}'); min-height: 200px; background-size: cover; background-position: center;"></div>
+                    <div class="img rounded d-flex align-items-end" style="background-image: url('{{ $carro->url_foto1}}'); min-height: 200px; background-size: cover; background-position: center;"></div>
                     <div class="text p-3">
                         <h2 class="mb-2">
                             <a href="#">{{ $carro->modelo->nome ?? 'Modelo desconhecido' }}</a>
