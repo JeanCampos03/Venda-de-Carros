@@ -2,7 +2,6 @@
 **LPWEB II - Sistema de Venda de Veículos (Laravel)**
 
 ---
-
 ## ⚙️ Passo a passo para execução
 
 ### 1️⃣ Clonar o repositório
@@ -97,6 +96,8 @@ php artisan serve
 
 
 **Autor: Jean Campos**
+
 **Disciplina: Linguagem de Programação Web II**
-**Projeto: Sistema de Venda de Carros**
+
+**Projeto: Sistema de Venda de Carros (Laravel)**
 
