@@ -96,7 +96,7 @@ php artisan serve
 ![Tela Delete-Conta](imagens_projeto/Excluir_Perfil.png)
 
 
-Autor: Jean Campos
-Disciplina: Linguagem de Programação Web II
-Projeto: Sistema de Venda de Carros
+**Autor: Jean Campos**
+**Disciplina: Linguagem de Programação Web II**
+**Projeto: Sistema de Venda de Carros**
 
