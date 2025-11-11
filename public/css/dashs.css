@@ -408,4 +408,24 @@ body {
     background-color: #fff;
 }
 
+.edit-btn svg {
+    color: #6f42c1 !important;
+    /* muda a cor do lápis */
+}
+
+.delete-btn svg {
+    color: #dc3545;
+    /* vermelho padrão bootstrap */
+    transition: color 0.2s;
+}
+
+.delete-btn:hover svg {
+    color: #a71d2a;
+    /* tom mais escuro ao passar o mouse */
+}
+
+.edit-btn:hover svg {
+    color: #808080 !important;
+    /* muda ao passar o mouse */
+}
 

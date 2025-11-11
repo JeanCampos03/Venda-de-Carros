@@ -85,6 +85,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/atualizar-marca/{id}', [MarcaController::class, 'ataualizarMarca'])->name('marca.atualizar');
 
+
+    Route::get('/excluir-marca/{id}',[MarcaController::class, 'excluirMarca'])->name('marca.excluir');
+    Route::get('/excluir-modelo/{id}',[ModeloController::class, 'excluirModelo'])->name('modelo.excluir');
+    Route::get('/excluir-cor/{id}',[CorController::class, 'excluirCor'])->name('cor.excluir');
+    Route::get('/excluir-veiculo/{id}',[CarroController::class, 'excluirVeiculo'])->name('veiculo.excluir');
+
     
 
     Route::get('/perfil', [ProfileController::class, 'edit'])->name('perfil.edit');

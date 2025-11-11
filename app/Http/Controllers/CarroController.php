@@ -13,12 +13,8 @@ class CarroController extends Controller
 {
     public function index() 
     {
-        //$carros = "SELECT * FROM carros";
         $carros = Carro::all();
-        //var_dump($carros);
 
-        //compact
-        //echo "chegou no controller carros";
         return view('carro.index',
         compact('carros'));
     }
@@ -26,7 +22,7 @@ class CarroController extends Controller
         public function create(Request $request)
     {
 
-            // 1. Busca todas as marcas (cada uma com seus modelos)
+        // 1. Busca todas as marcas (cada uma com seus modelos)
         $marcas = Marca::with('modelos')->get();
 
         // 2. Busca todas as cores
@@ -144,7 +140,20 @@ class CarroController extends Controller
         return view('detalhes', compact('carros'));
     }
 
+        public function excluirVeiculo(string $id)
+    {
+            
+         $carro = Carro::find($id);
 
+        if (!$carro)
+            echo "Modelo não encontrado!";
+
+        $carro->delete();
+
+        return redirect()->route('index.veiculo');
+
+
+    }
 }
 
 
