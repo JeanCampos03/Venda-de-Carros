@@ -71,6 +71,9 @@ php artisan serve
 ### Área Pública ###
 ![Tela Publica](imagens_projeto/Area_Publica.png)
 
+### Detalhes do Veículo ###
+![Tela Detalhes](imagens_projeto/Detalhes_Veiculo.png)
+
 ### Área Administrativa ###
 ![Tela Administrativa](imagens_projeto/Area_Administrativa.png)
 
@@ -79,9 +82,6 @@ php artisan serve
 
 ### Listagem de Veículos ###
 ![Tela Listagem](imagens_projeto/Listagem_Veiculos.png)
-
-### Detalhes do Veículo ###
-![Tela Detalhes](imagens_projeto/Detalhes_Veiculos.png)
 
 ### Edição de Veículo ###
 ![Tela Edição](imagens_projeto/Edição_Veiculo.png)
