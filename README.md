@@ -60,23 +60,11 @@ php artisan serve
 ```
 ---
 
-### Dica extra
+### Imagens do projeto
 
-Caso ocorra o erro abaixo ao rodar o "composer install"
-- Syncing myclabs/deep-copy (1.13.4) into cache Failed to download phpunit/phpunit from dist: The zip extension and unzip/7z commands are both missing, skipping. The php.ini used by your command-line PHP is: C:\xampp\php\php.ini Now trying to download from source
+### Área Pública ###
+![Tela Login](imagens_projeto/Area_Publica.png)
 
-```bash
-✅ Solução: Ativar o suporte a ZIP
-Opção 1 – Ativar a extensão ZIP do PHP
-Abra o arquivo
-C:\xampp\php\php.ini
-Procure a linha:
-;extension=zip
-Remova o ponto e vírgula (;) no início, deixando assim:
-extension=zip
-
-Salve o arquivo, exclua a pasta vendor e rode novamente "composer install"
-```
 
 Autor: Jean Campos
 Disciplina: Linguagem de Programação Web II
