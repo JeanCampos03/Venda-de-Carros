@@ -62,7 +62,7 @@
                     <div class="img rounded d-flex align-items-end" style="background-image: url('{{ $carro->url_foto1}}'); min-height: 200px; background-size: cover; background-position: center;"></div>
                     <div class="text p-3">
                         <h2 class="mb-2">
-                            <a href="#">{{ $carro->modelo->nome ?? 'Modelo desconhecido' }}</a>
+                            <a href="detalhes/{{$carro->id}}">{{ $carro->modelo->nome ?? 'Modelo desconhecido' }}</a>
                         </h2>
                         <div class="d-flex mb-2 justify-content-between">
                             <span class="cat">{{ $carro->marca->nome ?? 'Marca desconhecida' }}</span>
