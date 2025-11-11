@@ -1,5 +1,5 @@
 # 🚗 Venda-de-Carros
-Trabalho de **LPWEB II - Sistema de Venda de Veículos (Laravel)**
+**LPWEB II - Sistema de Venda de Veículos (Laravel)**
 
 ---
 
