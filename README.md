@@ -99,5 +99,5 @@ php artisan serve
 
 **Disciplina: Linguagem de Programação Web II**
 
-**Projeto: Sistema de Venda de Carros (Laravel)**
+**Projeto: Sistema de Venda de Carros**
 
