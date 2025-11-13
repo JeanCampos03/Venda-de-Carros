@@ -37,7 +37,7 @@
             </a>
 
             <a class="new-register" href="login">
-            <i class="fas fa-sign-in-alt"></i> Log in
+            <i class="fas fa-sign-in-alt"></i> Entrar
             </a>
         </div>
     </form>
