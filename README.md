@@ -1,8 +1,7 @@
 # 🚗 Venda-de-Carros
-Trabalho de **LPWEB II**
+**LPWEB II - Sistema de Venda de Veículos (Laravel)**
 
 ---
-
 ## ⚙️ Passo a passo para execução
 
 ### 1️⃣ Clonar o repositório
@@ -60,25 +59,45 @@ php artisan serve
 ```
 ---
 
-### Dica extra
+### 8️⃣ Imagens do projeto
 
-Caso ocorra o erro abaixo ao rodar o "composer install"
-- Syncing myclabs/deep-copy (1.13.4) into cache Failed to download phpunit/phpunit from dist: The zip extension and unzip/7z commands are both missing, skipping. The php.ini used by your command-line PHP is: C:\xampp\php\php.ini Now trying to download from source
+### Tela de Login ###
+![Tela Login](imagens_projeto/Tela_Login.png)
 
-```bash
-✅ Solução: Ativar o suporte a ZIP
-Opção 1 – Ativar a extensão ZIP do PHP
-Abra o arquivo
-C:\xampp\php\php.ini
-Procure a linha:
-;extension=zip
-Remova o ponto e vírgula (;) no início, deixando assim:
-extension=zip
+### Tela de Registro ###
+![Tela Registro](imagens_projeto/Tela_Registro.png)
 
-Salve o arquivo, exclua a pasta vendor e rode novamente "composer install"
-```
+### Área Pública ###
+![Tela Publica](imagens_projeto/Area_Publica.png)
 
-Autor: Jean Campos
-Disciplina: Linguagem de Programação Web II
-Projeto: Sistema de Venda de Carros
+### Detalhes do Veículo ###
+![Tela Detalhes](imagens_projeto/Detalhes_Veiculo.png)
+
+### Área Administrativa ###
+![Tela Administrativa](imagens_projeto/Area_Administrativa.png)
+
+### Cadastro de Veículos ###
+![Tela Cadastro](imagens_projeto/Cadastro_Veiculos.png)
+
+### Listagem de Veículos ###
+![Tela Listagem](imagens_projeto/Listagem_Veiculos.png)
+
+### Edição de Veículo ###
+![Tela Edição](imagens_projeto/Edição_Veiculo.png)
+
+### Editar Perfil ###
+![Tela Edit-Perfil](imagens_projeto/Editar_Perfil.png)
+
+### Alterar Senha ###
+![Tela Edit-Senha](imagens_projeto/Editar_Perfil.png)
+
+### Excluir Conta ###
+![Tela Delete-Conta](imagens_projeto/Excluir_Perfil.png)
+
+
+**Autor: Jean Campos**
+
+**Disciplina: Linguagem de Programação Web II**
+
+**Projeto: Sistema de Venda de Carros**
 
